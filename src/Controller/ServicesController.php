@@ -4,15 +4,13 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
 use Symfony\Component\HttpFoundation\Response;
-use Twig\Environment;
 
-class HomeController extends AbstractController
+class ServicesController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/services", name="services.index")
      * @return Response
      */
-    public function index(): Response { return $this->render('pages/home.html.twig'); }
+    public function index(): Response { return $this->render('services/index.html.twig'); }
 }
