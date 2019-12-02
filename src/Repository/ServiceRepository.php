@@ -19,6 +19,15 @@ class ServiceRepository extends ServiceEntityRepository
         parent::__construct($registry, Service::class);
     }
 
+    public function findAllActive()
+    {
+        return $this->createQueryBuilder('s')
+            ->andWhere('s.is_active = :val')
+            ->setParameter('val', true)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Service[] Returns an array of Service objects
     //  */
