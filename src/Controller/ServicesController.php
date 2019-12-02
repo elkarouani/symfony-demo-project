@@ -12,5 +12,10 @@ class ServicesController extends AbstractController
      * @Route("/services", name="services.index")
      * @return Response
      */
-    public function index(): Response { return $this->render('services/index.html.twig'); }
+    public function index(): Response 
+    { 
+        return $this->render('services/index.html.twig', [
+            'current_menu' => 'services'
+        ]); 
+    }
 }

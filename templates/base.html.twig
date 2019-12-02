@@ -9,8 +9,8 @@
     <body>
         <div class="ui menu">
             <a class="header item" href="{{ path('home') }}">My Agency</a>
-            <a class="active item" href="{{ path('home') }}">Home</a>
-            <a class="item" href="{{ path('services.index') }}">Services</a>
+            <a class="{% if current_menu == 'home' %}active{% endif %} item" href="{{ path('home') }}">Home</a>
+            <a class="{% if current_menu == 'services' %}active{% endif %} item" href="{{ path('services.index') }}">Services</a>
         </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
